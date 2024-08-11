@@ -6,6 +6,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"sync"
 
 	"github.com/miekg/dns"
 	"gopkg.in/yaml.v3"
@@ -105,35 +106,41 @@ func queryDNS(domain string, recordType uint16, resolver Resolver) ([]Record, er
 	}
 
 	return answers, nil
-
 }
 
 func Dig(domain string) (Output, error) {
-
 	var output Output
 	output.Host = domain
 
 	var answers []Answers
+	var wg sync.WaitGroup
+	var mu sync.Mutex // To protect concurrent access to answers
 
 	for _, record := range recordTypes {
 		for _, resolver := range Resolvers {
-			data, err := queryDNS(domain, record, resolver)
-			if err != nil {
-				ErrorLog.Println(err)
-			}
-			answers = append(answers,
-				Answers{
-					Resolver: resolver,
-					Record:   data,
-				},
-			)
+			wg.Add(1)
+			go func(resolver Resolver, record uint16) {
+				defer wg.Done()
+				data, err := queryDNS(domain, record, resolver)
+				if err != nil {
+					ErrorLog.Println(err)
+				}
+				mu.Lock()
+				answers = append(answers,
+					Answers{
+						Resolver: resolver,
+						Record:   data,
+					},
+				)
+				mu.Unlock()
+			}(resolver, record)
 		}
 	}
 
+	wg.Wait()
 	output.Answers = answers
 
 	return output, nil
-
 }
 
 func GetResolvers() ([]Resolver, error) {
