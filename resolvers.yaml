@@ -1,0 +1,14 @@
+Google: 
+  - 8.8.4.4
+Cloudflare: 
+  - 1.1.1.1
+Quad9: 
+  - 9.9.9.9
+Verisign: 
+  - 64.6.64.6
+Control D: 
+  - 76.76.2.0
+OpenDNS: 
+  - 208.67.222.222
+AlternateDNS:
+  - 76.76.19.19

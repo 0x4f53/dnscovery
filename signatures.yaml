@@ -1,0 +1,130 @@
+Google Search Console:
+  - "google-site-verification="
+Google Cloud Platform:
+  - "(?i)gcp|google cloud"
+Google Workspace:
+  - "_spf.google.com"
+  - "(.*)aspmx(.*).google.com"
+Microsoft Office 365:
+  - ".*protection.outlook.com"
+  - "(?i)MS=ms(.*){4,16}"
+Microsoft Azure:
+  - "(?i)azure|microsoft"
+Zoho Mail:
+  - "zoho-verification=(.*).zmverify.zoho.(.*)"
+  - "include:(.*).transmail.net"
+Zoho Campaigns:
+  - "include:.*zcsend.*"
+Zoho Bookings:
+  - ".bookings.(.*).zohohost.(.*)"
+Mandrill:
+  - "include:.*.mandrillapp.com"
+Twilio SendGrid:
+  - "include:.*sendgrid.*"
+Mimecast Email Delivery:
+  - "include:.*netblocks.mimecast.*"
+Mailgun:
+  - "include:.*mailgun.org*"
+Mailchimp:
+  - "include:(.*)mcsv.net"
+Amazon Simple Email Service (SES):
+  - "_amazonses.example.com"
+Amazon Elastic BeanStalk (ELB):
+  - ".*elb.[a-z]{2,10}-[a-z]{2,10}-[0-9]{1,2}.amazonaws.com"
+Stripe:
+  - "stripe-verification"
+Shopify:
+  - "shopify-domain-verification="
+Cloudflare:
+  - "cloudflare-verify="
+Cloudflare Mail:
+  - "include:.*.mx.cloudflare.net"
+  - ".*@dmarc-reports.cloudflare.net"
+DigiCert:
+  - "_globalsign-domain-verification="
+Let's Encrypt:
+  - "_acme-challenge"
+GitHub:
+  - "github-domain-verification"
+GitLab:
+  - "gitlab-pages-verification-code="
+Adobe Creative Cloud:
+  - "adobe-idp-site-verification="
+Salesforce:
+  - "include:.*salesforce.*"
+Zendesk:
+  - "include:.*mail.zendesk.*"
+Qualtrics:
+  - "include:.*.qualtrics.*"
+HubSpot:
+  - "hubspot-domain-verification="
+  - "hubspot-developer-verification="
+  - "include:.*hubspot.*"
+SpyCloud:
+  - "spycloud-domain-verification="
+  - "spycloud-developer-verification="
+Sonatype:
+  - "OSSRH-.*"
+Bing Webmaster Tools:
+  - "msvalidate.01="
+Yandex Webmaster:
+  - "yandex-verification="
+Wix:
+  - "wix-domain-verification="
+Facebook:
+  - "facebook-domain-verification="
+Twitter:
+  - "twitter-domain-verification="
+Pinterest:
+  - "pinterest-site-verification="
+Slack:
+  - "slack-domain-verification="
+Spotify:
+  - "spotify-domain-verification="
+Heroku:
+  - "heroku-domain-verification="
+  - "include:.*heroku.*"
+Atlassian:
+  - "atlassian-domain-verification="
+Mailjet:
+  - "include:.*mailjet.*"
+Campaign Monitor:
+  - "include:.*createsend.*"
+Square:
+  - "square-site-verification="
+Docker:
+  - "docker-domain-verification="
+LinkedIn:
+  - "linkedin-domain-verification="
+Docusign:
+  - "docusign=[a-f0-9-]{32,}"
+VeriSign:
+  - ".*verisign.*"
+Apache Tomcat:
+  - ".*tomcat.*"
+Sectigo:
+  - ".*sectigo.*"
+Auth0:
+  - "auth0-domain-verification="
+Okta:
+  - ".*okta.*"
+AWeber:
+  - "include:.*.aweber.com"
+Cisco WebEx:
+  - "cisco-ci-domain-verification="
+Campaigner:
+  - "include:*.*campaigner.com"
+Fortinet:
+  - "fortinet-fortiphish-site-verification=.{16,24}"
+Dynatrace:
+  - "(d|D)ynatrace-site-verification=*.{48,64}"
+Apple:
+  - "apple-domain-verification=.{16}"
+ActiveCampaign:
+  - "include:emsd1.com"
+Rackspace:
+  - "include:emailsrvr.com"
+Ethereum Name Service:
+  - "ENS1 dnsname.ens.eth 0x.{40}"
+OpenAI Domain:
+  - "openai-domain-verification=.*"

@@ -1,0 +1,4 @@
+*.txt
+output/
+input/
+dnsservices
