@@ -4,13 +4,13 @@
 [![Latest Version](https://img.shields.io/github/v/tag/0x4f53/dnsservices?label=Version&style=flat-square&logo=semver)](https://github.com/0x4f53/subs/releases)
 [![Binaries](https://img.shields.io/badge/Binaries-Click%20Here-blue?style=flat-square&logo=dropbox)](.build/binaries/)
 
-# DNSservices
+# 🌐 DNSservices
 
 ![DNSservices GIF](terminal.gif)
 
 A lightning-fast Golang tool to discover services embedded into DNS records
 
-## Features
+## 🚀 Features
 - Takes just 2 seconds to resolve a domain**
 - Queries multiple DNS servers concurrently
 - More than 100 service signatures supported!
@@ -19,15 +19,14 @@ A lightning-fast Golang tool to discover services embedded into DNS records
 
 _**- depending on factors like internet speed, DNS server availability etc._
 
-## Usage
+## 🖊️ Usage
 
 ```bash
 Usage:
   dnsservices <domain1> <domain2>... [flags]
 
 Flags:
-  -h, --help            Help
-  -o, --output string   Save output to file (in JSON format) (default "output.json")
+  -o, --output string   Save output to file (in JSON format)
   -v, --verbose         Give extremely detailed information in output
 ```
 ### Examples
@@ -102,7 +101,7 @@ Found services:
         v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
 ```
 
-## Building
+## ⚙️ Building
 
 To build this on your machine, you need to have Golang installed.
 If you do, simply make build.sh executable and run it like so
@@ -112,7 +111,7 @@ If you do, simply make build.sh executable and run it like so
 ❯ ./build.sh
 ```
 
-## Installation
+## ⚙️ Installation
 ### Linux and macOS
 
 Simply run the `./install.sh` script (don't 
