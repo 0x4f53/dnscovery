@@ -108,7 +108,7 @@ If you do, simply make build.sh executable and run it like so
 
 ```bash
 ❯ chmod +x build.sh
-❯ sudo ./build.sh
+❯ ./build.sh
 ```
 
 ## ⚙️ Installation
