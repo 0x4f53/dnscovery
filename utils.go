@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"regexp"
 	"strconv"
+	"sync"
 
 	"github.com/miekg/dns"
 	"gopkg.in/yaml.v3"
@@ -25,7 +25,7 @@ type Service struct {
 }
 
 type Record struct {
-	Service  string
+	Services []string
 	Type     string
 	Hostname string
 	Value    string
@@ -42,7 +42,7 @@ type Resolver struct {
 
 type Answers struct {
 	Resolver Resolver
-	Record   []Record
+	Records  []Record
 }
 
 type Output struct {
@@ -69,71 +69,84 @@ func queryDNS(domain string, recordType uint16, resolver Resolver) ([]Record, er
 
 	r, _, err := c.Exchange(m, resolver.IP+":53")
 	if err != nil {
-		ErrorLog = log.New(os.Stderr, fmt.Sprintf("Failed (%s): ", resolver.Name), 0)
-		ErrorLog.Println(err)
+		//ErrorLog = log.New(os.Stderr, fmt.Sprintf("Failed (%s): ", resolver.Name), 0)
+		//ErrorLog.Println(err)
 		return answers, err
 	}
 
 	for _, ans := range r.Answer {
+
 		var value string
 		if txt, ok := ans.(*dns.TXT); ok {
 			value = txt.Txt[0]
 		}
 
-		var serviceName string
+		var serviceNames []string
 
 		for _, service := range Signatures {
 			for _, signature := range service.Signature {
 				if signature.MatchString(value) {
-					serviceName = service.Name
+					serviceNames = append(serviceNames, service.Name)
+					break
 				}
 			}
 		}
 
-		answers = append(answers,
-			Record{
-				Service:  serviceName,
-				Hostname: ans.Header().Name,
-				Type:     dns.TypeToString[ans.Header().Rrtype],
-				Class:    dns.ClassToString[ans.Header().Class],
-				TTL:      strconv.FormatUint(uint64(ans.Header().Ttl), 10),
-				Opcode:   dns.OpcodeToString[r.Copy().Opcode],
-				Rcode:    dns.RcodeToString[r.Copy().Rcode],
-				Value:    value,
-			},
-		)
+		record := Record{
+			Services: serviceNames,
+			Hostname: ans.Header().Name,
+			Type:     dns.TypeToString[ans.Header().Rrtype],
+			Class:    dns.ClassToString[ans.Header().Class],
+			TTL:      strconv.FormatUint(uint64(ans.Header().Ttl), 10),
+			Opcode:   dns.OpcodeToString[r.Copy().Opcode],
+			Rcode:    dns.RcodeToString[r.Copy().Rcode],
+			Value:    value,
+		}
+
+		if len(serviceNames) > 0 {
+			answers = append(answers, record)
+		}
+
 	}
 
 	return answers, nil
-
 }
 
 func Dig(domain string) (Output, error) {
-
 	var output Output
 	output.Host = domain
 
 	var answers []Answers
+	var wg sync.WaitGroup
+	var mu sync.Mutex
 
 	for _, record := range recordTypes {
 		for _, resolver := range Resolvers {
-			data, err := queryDNS(domain, record, resolver)
-			if err != nil {
-				ErrorLog.Println(err)
-			}
-			answers = append(answers,
-				Answers{
-					Resolver: resolver,
-					Record:   data,
-				},
-			)
+			wg.Add(1)
+			go func(resolver Resolver, record uint16) {
+				defer wg.Done()
+				data, err := queryDNS(domain, record, resolver)
+				if err != nil {
+					//ErrorLog.Println(err)
+				}
+				mu.Lock()
+				if len(data) > 0 {
+					answers = append(answers,
+						Answers{
+							Resolver: resolver,
+							Records:  data,
+						},
+					)
+				}
+				mu.Unlock()
+			}(resolver, record)
 		}
 	}
 
+	wg.Wait()
 	output.Answers = answers
 
 	return output, nil
-
 }
 
 func GetResolvers() ([]Resolver, error) {
@@ -193,4 +206,28 @@ func GetSignatures() ([]Service, error) {
 
 	return services, err
 
+}
+
+func RemoveDuplicatesAndEmptyStrings(input []string) []string {
+	uniqueStrings := make(map[string]bool)
+	var result []string
+
+	for _, str := range input {
+		if str != "" && !uniqueStrings[str] {
+			uniqueStrings[str] = true
+			result = append(result, str)
+		}
+	}
+
+	return result
+}
+
+func CheckInternet() bool {
+	c := new(dns.Client)
+
+	m := new(dns.Msg)
+	m.SetQuestion(dns.Fqdn("."), dns.TypeA)
+	m.RecursionDesired = true
+	_, _, err := c.Exchange(m, Resolvers[0].IP+":53")
+	return err == nil
 }
