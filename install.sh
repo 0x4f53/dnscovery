@@ -37,15 +37,15 @@ get_os_arch() {
 
 result=$(get_os_arch)
 
-sudo cp $resolvers_file $destination
-sudo cp $signatures_file $destination
+cp $resolvers_file $destination
+cp $signatures_file $destination
 
 cd $build_dir
 file=$(ls | grep "$result")
 echo "Detected arch: $file"
-sudo cp $file $bin_name
+cp $file $bin_name
 
 echo "Moving to $destination"
-sudo mv $bin_name $destination
+mv $bin_name $destination
 
 echo "Installed successfully!"

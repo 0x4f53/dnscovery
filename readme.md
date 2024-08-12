@@ -108,7 +108,7 @@ If you do, simply make build.sh executable and run it like so
 
 ```bash
 ❯ chmod +x build.sh
-❯ ./build.sh
+❯ sudo ./build.sh
 ```
 
 ## ⚙️ Installation
@@ -119,7 +119,14 @@ have the time to put this on package managers)
 
 ```bash
 chmod +x install.sh
-./install.sh
+sudo ./install.sh
+```
+
+And to uninstall
+
+```bash
+chmod +x uninstall.sh
+sudo ./uninstall.sh
 ```
 
 You can also find the binaries in [`.build/binaries`](.build/binaries/) if you want to directly run them
