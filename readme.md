@@ -1,7 +1,7 @@
 
 [![Golang](https://img.shields.io/badge/Golang-fff.svg?style=flat-square&logo=go)](https://go.dev)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=flat-square&logo=libreoffice)](LICENSE)
-[![Latest Version](https://img.shields.io/github/v/tag/0x4f53/dnsservices?label=Version&style=flat-square&logo=semver)](https://github.com/0x4f53/subs/releases)
+[![Latest Version](https://img.shields.io/github/v/tag/0x4f53/dnsservices?label=Version&style=flat-square&logo=semver)](https://github.com/0x4f53/dnsservices/releases)
 [![Binaries](https://img.shields.io/badge/Binaries-Click%20Here-blue?style=flat-square&logo=dropbox)](.build/binaries/)
 
 # 🌐 DNSservices

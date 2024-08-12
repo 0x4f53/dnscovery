@@ -8,7 +8,6 @@ bin_name="dnsservices"
 resolvers_file="resolvers.yaml"
 signatures_file="signatures.yaml"
 
-build_dir=".build/binaries/"
 destination="/usr/local/bin/"
 
 rm -rf $destination/$resolvers_file
