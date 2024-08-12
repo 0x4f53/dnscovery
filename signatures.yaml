@@ -44,7 +44,7 @@ Shopify:
 Cloudflare:
   - "cloudflare-verify="
 Cloudflare Mail:
-  - "include:.*.mx.cloudflare.net"
+  - "include:(.*).mx.cloudflare.net"
   - ".*@dmarc-reports.cloudflare.net"
 DigiCert:
   - "_globalsign-domain-verification="
