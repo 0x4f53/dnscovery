@@ -8,9 +8,16 @@
 
 ![DNSservices GIF](terminal.gif)
 
-
 A lightning-fast Golang tool to discover services embedded into DNS records
 
+## Features
+- Takes just 2 seconds to resolve a domain**
+- Queries multiple DNS servers concurrently
+- More than 100 service signatures supported!
+- Easy to customize regexes and resolvers lists in YAML format
+- Verbose JSON output for in-depth debugging
+
+_**- depending on factors like internet speed, DNS server availability etc._
 
 ## Usage
 
@@ -30,6 +37,32 @@ Flags:
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
 Found services: OpenAI Domain, Ethereum Name Service, Cloudflare Mail, Google Workspace
+```
+
+- JSON output
+```bash
+❯ ./dnsservices 0x4f.in -o=output.json
+Checking if online...   [ ✓ ONLINE ]
+Looking up '0x4f.in'... [ 7 resolvers found! ]
+Output saved to 'output.json'
+❯ cat output.json
+{
+  "Host": "0x4f.in",
+  "Answers": [
+    {
+      "Resolver": {
+        "Name": "Google",
+        "IP": "8.8.4.4"
+      },
+      "Records": [
+        {
+          "Services": [
+            "Ethereum Name Service"
+          ],
+          "Type": "TXT",
+          "Hostname": "0x4f.in.",
+          "Value": "ENS1 dnsname.ens.eth 0x6189345d91a667c4822A0afD7587a4994965a57C",
+    ...
 ```
 
 - Trying multiple domains
