@@ -5,6 +5,9 @@ set -o pipefail
 
 bin_name="dnsservices"
 
+resolvers_file="resolvers.yaml"
+signatures_file="signatures.yaml"
+
 build_dir=".build/binaries/"
 destination="/usr/local/bin/"
 
@@ -33,6 +36,9 @@ get_os_arch() {
 }
 
 result=$(get_os_arch)
+
+sudo cp $resolvers_file $destination
+sudo cp $signatures_file $destination
 
 cd $build_dir
 file=$(ls | grep "$result")

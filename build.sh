@@ -19,7 +19,7 @@ OS_ARCH_LIST=(
 OUTPUT_DIR=".build/binaries/"
 
 rm -rf $OUTPUT_DIR
-rm subs
+rm $PROGRAM_NAME
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -45,6 +45,7 @@ for OS_ARCH in "${OS_ARCH_LIST[@]}"; do
         echo "Failed to build for $OS/$ARCH"
         exit 1
     fi
+    
 done
 
 echo "All binaries built successfully!"
