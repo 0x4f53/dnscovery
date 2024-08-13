@@ -63,7 +63,7 @@ func printServices(output Output) {
 			fmt.Printf("  %s. %s\n", strconv.Itoa(index+1), record)
 			continue
 		}
-		
+
 		fmt.Printf("%s", record)
 
 		if index != len(services)-1 {
@@ -101,7 +101,7 @@ func printProviders(output Output) {
 
 	providers = RemoveDuplicatesAndEmptyStrings(providers)
 
-	fmt.Println("\nDNS providers that responded:")
+	fmt.Println("\nDNS providers with this host:")
 
 	for index, item := range providers {
 		fmt.Printf("  %s. %s\n", strconv.Itoa(index+1), item)
@@ -128,7 +128,7 @@ func main() {
 	}
 	Resolvers = resolvers
 
-	fmt.Print("Checking if online...")
+	fmt.Println("Checking if online...")
 
 	if !CheckInternet() {
 		ErrorLog.Println("Couldn't connect to the internet. Please check your connection and try again!")

@@ -13,11 +13,11 @@ A lightning-fast Golang tool to discover services embedded into DNS records
 ## 🚀 Features
 - Takes just 2 seconds to resolve a domain**
 - Queries multiple DNS servers concurrently
-- More than 100 service signatures supported!
+- More than 100 service signatures supported
 - Easy to customize regexes and resolvers lists in YAML format
 - Verbose JSON output for in-depth debugging
 
-_**- depending on factors like internet speed, DNS server availability etc._
+_** - depending on factors like internet speed, DNS server availability etc._
 
 ## 🖊️ Usage
 
@@ -85,7 +85,7 @@ Found services: Microsoft Office 365, Pinterest, Google Search Console, MongoDB,
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
 
-DNS providers that responded:
+DNS providers containing with this host:
   1. Quad9 (9.9.9.9)
   2. Google (8.8.4.4)
   4. Cloudflare (1.1.1.1)
