@@ -66,7 +66,7 @@ Output saved to 'output.json'
 
 - Trying multiple domains
 ```bash
-❯ ./dnsservices 0x4f.in blackhat.com zoho.com
+❯ ./dnsservices 0x4f.in blackhat.com
 Checking if online...   [ ✓ ONLINE ]
 
 Looking up '0x4f.in'... [ 7 resolvers found! ]
@@ -74,9 +74,6 @@ Found services: Ethereum Name Service, Cloudflare Mail, Google Workspace, OpenAI
 
 Looking up 'blackhat.com'...    [ 7 resolvers found! ]
 Found services: Google Search Console, Microsoft Office 365, Twilio SendGrid, Google Workspace
-
-Looking up 'zeron.one'...       [ 7 resolvers found! ]
-Found services: Microsoft Office 365, Pinterest, Google Search Console, MongoDB, Atlassian
 ```
 
 - Verbose mode
