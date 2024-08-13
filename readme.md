@@ -6,7 +6,7 @@
 
 # 🌐 DNSservices
 
-![DNSservices GIF](terminal.gif)
+<img src = preview.gif alt="subs preview" width = "500dp">
 
 A lightning-fast Golang tool to discover services embedded into DNS records
 
