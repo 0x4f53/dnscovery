@@ -128,7 +128,7 @@ func main() {
 	}
 	Resolvers = resolvers
 
-	fmt.Println("Checking if online...")
+	fmt.Print("\nChecking if online...")
 
 	if !CheckInternet() {
 		ErrorLog.Println("Couldn't connect to the internet. Please check your connection and try again!")

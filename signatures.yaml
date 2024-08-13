@@ -13,11 +13,14 @@ Microsoft Azure:
   - "(?i)azure|microsoft"
 Microsoft Bing Webmaster Tools:
   - "msvalidate.01="
+Microsoft Dynamics 365:
+  - "d365mktkey="
 Dropbox:
   - "dropbox-domain-verification"
 Zoho Mail:
   - "zoho-verification=(.*).zmverify.zoho.(.*)"
   - "include:(.*).transmail.net"
+  - "include:zsend.in"
 Zoho Campaigns:
   - "include:.*zcsend.*"
 Zoho Bookings:
@@ -43,6 +46,7 @@ Shopify:
   - "shopify-domain-verification="
 Cloudflare:
   - "cloudflare-verify="
+  - "ca3-(.*)"
 Cloudflare Mail:
   - "include:(.*).mx.cloudflare.net"
   - ".*@dmarc-reports.cloudflare.net"
@@ -91,14 +95,22 @@ Spotify:
 Heroku:
   - "heroku-domain-verification="
   - "include:.*heroku.*"
+Logix InfoSecurity:
+  - "include:.*logix.in"
+Netcore Email:
+  - "include:.*ppspf.net"
 MongoDB:
-  - "(?i)mongodb|atlas"
+  - "authSource=(.*)&loadBalanced=(.*)"
 Atlassian:
-  - "atlassian-domain-verification="
+  - "atlassian-*.*-domain-verification="
+Atlassian Mail:
+  - "include:.*atlassian.net"
 RedHat OpenShift:
   - "(?i)openshift|red hat"
 Mailjet:
   - "include:.*mailjet.*"
+SmarterMail:
+  - "include:.*m3c.in"
 Campaign Monitor:
   - "include:.*createsend.*"
 Square:

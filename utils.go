@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"sync"
@@ -149,8 +150,17 @@ func Dig(domain string) (Output, error) {
 	return output, nil
 }
 
-func GetResolvers() ([]Resolver, error) {
+func pwd() string {
+	ex, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	exPath := filepath.Dir(ex)
+	return exPath
+}
 
+func GetResolvers() ([]Resolver, error) {
+	resolversFile = pwd() + "/" + resolversFile
 	yamlFile, err := os.ReadFile(resolversFile)
 	if err != nil {
 		log.Fatalf("Error reading YAML file: %v", err)
@@ -176,7 +186,7 @@ func GetResolvers() ([]Resolver, error) {
 }
 
 func GetSignatures() ([]Service, error) {
-
+	signaturesFile = pwd() + "/" + signaturesFile
 	yamlFile, err := os.ReadFile(signaturesFile)
 	if err != nil {
 		log.Fatalf("Error reading signatures: %v", err)
