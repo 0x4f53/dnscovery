@@ -100,7 +100,9 @@ Logix InfoSecurity:
 Netcore Email:
   - "include:.*ppspf.net"
 MongoDB:
-  - "authSource=(.*)&loadBalanced=(.*)"
+  - "mongodb-site-verification="
+  - "authSource=(.*)"
+  - "_mongodb._tcp"
 Atlassian:
   - "atlassian-*.*-domain-verification="
 Atlassian Mail:
