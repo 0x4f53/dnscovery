@@ -1,5 +1,5 @@
 Google Search Console:
-  - "google-site-verification="
+  - "google-site-verification"
 Google Cloud Platform:
   - "(?i)gcp|google cloud"
   - "(?i)ASPMX.L.GOOGLE.COM"
@@ -12,9 +12,9 @@ Microsoft Office 365:
 Microsoft Azure:
   - "(?i)azure|microsoft"
 Microsoft Bing Webmaster Tools:
-  - "msvalidate.01="
+  - "msvalidate.01"
 Microsoft Dynamics 365:
-  - "d365mktkey="
+  - "d365mktkey"
 Dropbox:
   - "dropbox-domain-verification"
 Zoho Mail:
@@ -29,6 +29,7 @@ Mandrill:
   - "include:.*.mandrillapp.com"
 Twilio SendGrid:
   - "include:.*sendgrid.*"
+  - "sendgrid-verification"
 Mimecast Email Delivery:
   - "include:.*netblocks.mimecast.*"
 Mailgun:
@@ -43,25 +44,25 @@ Amazon Elastic BeanStalk (ELB):
 Stripe:
   - "stripe-verification"
 Shopify:
-  - "shopify-domain-verification="
+  - "shopify-domain-verification"
 Cloudflare:
-  - "cloudflare-verify="
+  - "cloudflare-verify"
   - "ca3-(.*)"
 Cloudflare Mail:
   - "include:(.*).mx.cloudflare.net"
   - ".*@dmarc-reports.cloudflare.net"
 DigiCert:
-  - "_globalsign-domain-verification="
+  - "_globalsign-domain-verification"
 Let's Encrypt:
   - "_acme-challenge"
 GitHub:
   - "github-domain-verification"
   - "github-pages-verification"
 GitLab:
-  - "gitlab-pages-verification-code="
+  - "gitlab-pages-verification-code"
 Adobe Creative Cloud:
-  - "adobe-idp-site-verification="
-  - "adobe-aem-verification="
+  - "adobe-idp-site-verification"
+  - "adobe-aem-verification"
 Salesforce:
   - "include:.*salesforce.*"
 Zendesk:
@@ -70,41 +71,47 @@ Zendesk:
 Qualtrics:
   - "include:.*.qualtrics.*"
 HubSpot:
-  - "hubspot-domain-verification="
-  - "hubspot-developer-verification="
+  - "hubspot-domain-verification"
+  - "hubspot-developer-verification"
   - "include:.*hubspot.*"
 SpyCloud:
-  - "spycloud-domain-verification="
-  - "spycloud-developer-verification="
+  - "spycloud-domain-verification"
+  - "spycloud-developer-verification"
 Sonatype:
   - "OSSRH-.*"
 Yandex Webmaster:
-  - "yandex-verification="
+  - "yandex-verification"
+Yandex Metrika:
+  - "yandex-metrika"
 Wix:
-  - "wix-domain-verification="
+  - "wix-domain-verification"
 Facebook:
-  - "facebook-domain-verification="
+  - "facebook-domain-verification"
+  - "facebook-pixel-code"
 Twitter:
-  - "twitter-domain-verification="
+  - "twitter-domain-verification"
+  - "twitter"
+Instagram:
+  - "instagram-pixel-id"
 Pinterest:
-  - "pinterest-site-verification="
+  - "pinterest-site-verification"
 Slack:
-  - "slack-domain-verification="
+  - "slack-domain-verification"
 Spotify:
-  - "spotify-domain-verification="
+  - "spotify-domain-verification"
 Heroku:
-  - "heroku-domain-verification="
+  - "heroku-domain-verification"
   - "include:.*heroku.*"
 Logix InfoSecurity:
   - "include:.*logix.in"
 Netcore Email:
   - "include:.*ppspf.net"
 MongoDB:
-  - "mongodb-site-verification="
+  - "mongodb-site-verification"
   - "authSource=(.*)"
   - "_mongodb._tcp"
 Atlassian:
-  - "atlassian-*.*-domain-verification="
+  - "atlassian-*.*-domain-verification"
 Atlassian Mail:
   - "include:.*atlassian.net"
 RedHat OpenShift:
@@ -116,11 +123,12 @@ SmarterMail:
 Campaign Monitor:
   - "include:.*createsend.*"
 Square:
-  - "square-site-verification="
+  - "square-site-verification"
 Docker:
-  - "docker-domain-verification="
+  - "docker-domain-verification"
 LinkedIn:
-  - "linkedin-domain-verification="
+  - "linkedin-domain-verification"
+  - "li:"
 Docusign:
   - "docusign=[a-f0-9-]{32,}"
 VeriSign:
@@ -130,13 +138,13 @@ Apache Tomcat:
 Sectigo:
   - ".*sectigo.*"
 Auth0:
-  - "auth0-domain-verification="
+  - "auth0-domain-verification"
 Okta:
   - ".*okta.*"
 AWeber:
   - "include:.*.aweber.com"
 Cisco:
-  - "cisco-ci-domain-verification="
+  - "cisco-ci-domain-verification"
 Campaigner:
   - "include:*.*campaigner.com"
 Fortinet:
@@ -145,6 +153,7 @@ Dynatrace:
   - "(d|D)ynatrace-site-verification=*.{48,64}"
 Apple:
   - "apple-domain-verification=.{16}"
+  - "_apple-envoy-PublicKey-"
 ActiveCampaign:
   - "include:emsd1.com"
 Rackspace:
@@ -154,3 +163,69 @@ Ethereum Name Service:
   - "ENS1 dnsname.ens.eth 0x.{40}"
 OpenAI Domain:
   - "openai-domain-verification=.*"
+Dropbox Paper:
+  - "dropbox-paper-domain-verification"
+Twilio:
+  - "twilio-domain-verification"
+  - "include:spf.twilio.com"
+Intercom:
+  - "intercom-site-verification"
+New Relic:
+  - "newrelic-domain-verification"
+Asana:
+  - "asana-domain-verification"
+Trello:
+  - "trello-verification"
+Zendesk Sell:
+  - "zendesk-sell-verification"
+GoDaddy:
+  - "godaddy-site-verification"
+  - "godaddy-verification"
+Squarespace:
+  - "squarespace-site-verification"
+Webflow:
+  - "webflow-site-verification"
+ClickFunnels:
+  - "clickfunnels-domain-verification"
+Bitbucket:
+  - "bitbucket-verification-code"
+Toggl:
+  - "toggl-site-verification"
+Sentry:
+  - "sentry-domain-verification"
+Disqus:
+  - "disqus-domain-verification"
+Typeform:
+  - "typeform-site-verification"
+Freshdesk:
+  - "freshdesk-verification"
+Akamai:
+  - "akamai-edge-verification"
+Fastly:
+  - "(?i)fastly-domain-verification"
+CloudFront:
+  - "cloudfront-verify"
+Alibaba Cloud:
+  - "alibaba-site-verification"
+Infura:
+  - "infura-domain-verification-"
+SendinBlue:
+  - "sendinblue-verification-"
+Pendo:
+  - "pendo-site-verification"
+Amplitude:
+  - "amplitude-site-verification-"
+Segment:
+  - "segment-verification"
+Datadog:
+  - "datadog-site-verification-"
+PagerDuty:
+  - "pagerduty-domain-verification"
+Marketo:
+  - "mktoDomainVerification"
+SurveyMonkey:
+  - "surveymonkey-verification"
+Zoom:
+  - "zoom_verify_[A-Za-z0-9_-]{16,}"
+Weebly:
+  - "weebly-domain-verification"
