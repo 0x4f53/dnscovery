@@ -131,6 +131,7 @@ func main() {
 	fmt.Print("\nChecking if online...")
 
 	if !CheckInternet() {
+		fmt.Println()
 		ErrorLog.Println("Couldn't connect to the internet. Please check your connection and try again!")
 		os.Exit(-2)
 	}
