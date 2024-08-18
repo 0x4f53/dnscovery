@@ -1,14 +1,19 @@
-Google Search Console:
-  - "google-site-verification"
 Google Cloud Platform:
+  - "google-site-verification"
   - "(?i)gcp|google cloud"
   - "(?i)ASPMX.L.GOOGLE.COM"
+Firebase (Google):
+  - "firebase"
 Google Workspace:
   - "_spf.google.com"
   - "(.*)aspmx(.*).google.com"
+Gandi.net:
+  - "_mailcust.gandi.net"
+  - "_spf.gandi.net"
 Microsoft Office 365:
   - ".*protection.outlook.com"
   - "(?i)MS=ms(.*){4,16}"
+  - "mscid"
 Microsoft Azure:
   - "(?i)azure|microsoft"
 Microsoft Bing Webmaster Tools:
@@ -52,19 +57,20 @@ Cloudflare Mail:
   - "include:(.*).mx.cloudflare.net"
   - ".*@dmarc-reports.cloudflare.net"
 DigiCert:
-  - "_globalsign-domain-verification"
+  - "globalsign-domain-verification"
 Let's Encrypt:
-  - "_acme-challenge"
+  - "acme-challenge"
 GitHub:
   - "github-domain-verification"
   - "github-pages-verification"
 GitLab:
   - "gitlab-pages-verification-code"
 Adobe Creative Cloud:
-  - "adobe-idp-site-verification"
-  - "adobe-aem-verification"
+  - "adobe-*.*-verification"
 Salesforce:
   - "include:.*salesforce.*"
+Salesforce Pardot:
+  - "pardot_"
 Zendesk:
   - "include:.*mail.zendesk.*"
   - "zendesk-verification"
@@ -145,6 +151,9 @@ AWeber:
   - "include:.*.aweber.com"
 Cisco:
   - "cisco-ci-domain-verification"
+Cisco Webex:
+  - "webexdomainverification"
+  - "ciscocidomainverification"
 Campaigner:
   - "include:*.*campaigner.com"
 Fortinet:
@@ -211,6 +220,7 @@ Infura:
   - "infura-domain-verification-"
 SendinBlue:
   - "sendinblue-verification-"
+  - "sendinblue-code"
 Pendo:
   - "pendo-site-verification"
 Amplitude:
@@ -229,3 +239,15 @@ Zoom:
   - "zoom_verify_[A-Za-z0-9_-]{16,}"
 Weebly:
   - "weebly-domain-verification"
+Mail.ru:
+  - "mailru-verification"
+Spiceworks:
+  - "workplace-domain-verification"
+haveibeenpwned:
+  - "have-i-been-pwned-verification"
+Citrix:
+  - "citrix-verification-code"
+Brave:
+  - "brave-ledger-verification"
+Loader.io:
+  - "loaderio"
