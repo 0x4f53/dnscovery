@@ -353,6 +353,8 @@ site24x7:
   - "site24x7-domain-verification="
 Barracuda.com:
   - "bvm-site-verification"
+  - "include:.*.barracudanetworks.com"
+  - "include:.*.barracuda.com"
 Postman:
   - "postman-domain-verification"
 Botify:
