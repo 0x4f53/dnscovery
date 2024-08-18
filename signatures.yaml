@@ -90,8 +90,7 @@ HubSpot:
   - "hubspot-developer-verification"
   - "include:.*hubspot.*"
 SpyCloud:
-  - "spycloud-domain-verification"
-  - "spycloud-developer-verification"
+  - "spycloud-*.*-verification"
 Sonatype:
   - "OSSRH-.*"
   - "sonatype"
@@ -168,6 +167,7 @@ Campaigner:
   - "include:*.*campaigner.com"
 Fortinet:
   - "fortinet-fortiphish-site-verification=.{16,24}"
+  - "_spf.fortinet.com"
 Dynatrace:
   - "dynatrace-site-verification="
 Apple:
@@ -288,17 +288,12 @@ Zapier:
   - "zapier-domain-verification"
 uWSGI:
   - "uwsgi:"
-uWSGI:
-  - "uwsgi:"
 bhosted.nl:
   - "bhosted"
 AuthCode:
   - "Auth-Code"
 Keybase:
   - "keybase-site-verification"
-Sonatype:
-  - "sonatype"
-  - "OSSRH"
 Rebelmouse:
   - "rebelmouse"
 Akamai Cloudpiercer:
@@ -341,8 +336,6 @@ Symantec:
   - "include:_spf.symantec.com"
 TeamViewer:
   - "teamviewer-sso-verification"
-SpyCloud:
-  - "spycloud-domain-verification"
 Mailigen:
   - "mailigen-site-verification"
 Sophos:
@@ -377,8 +370,6 @@ McAfee:
   - "_spf.mcafee.com"
 Trend Micro:
   - "_spf.trendmicro.com"
-Fortinet:
-  - "_spf.fortinet.com"
 Kaspersky:
   - "_spf.kaspersky.com"
 Trellix FireEye:
