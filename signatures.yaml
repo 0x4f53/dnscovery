@@ -19,12 +19,15 @@ Microsoft Office 365:
   - "mtc=ms"
 Microsoft Azure:
   - "azure|microsoft"
+  - "_dnsauth.*.com"
 Microsoft Bing Webmaster Tools:
   - "msvalidate.01"
 Microsoft Dynamics 365:
   - "d365mktkey"
 Dropbox:
   - "dropbox-domain-verification"
+Box.com:
+  - "include:_spf.box.com"
 Zoho Mail:
   - "zoho-verification=(.*).zmverify.zoho.(.*)"
   - "include:(.*).transmail.net"
@@ -91,6 +94,7 @@ SpyCloud:
   - "spycloud-developer-verification"
 Sonatype:
   - "OSSRH-.*"
+  - "sonatype"
 Yandex Webmaster:
   - "yandex-verification"
 Yandex Metrika:
@@ -334,6 +338,7 @@ Sage.com:
   - "intacct-esk"
 Symantec:
   - "OSIAGENTREGURL"
+  - "include:_spf.symantec.com"
 TeamViewer:
   - "teamviewer-sso-verification"
 SpyCloud:
@@ -366,3 +371,17 @@ KnowBe4:
   - "knowbe4-site-verification"
 Feedblitz:
   - "blitz"
+Palo Alto Networks:
+  - "_spf.paloaltonetworks.com"
+McAfee:
+  - "_spf.mcafee.com"
+Trend Micro:
+  - "_spf.trendmicro.com"
+Fortinet:
+  - "_spf.fortinet.com"
+Kaspersky:
+  - "_spf.kaspersky.com"
+Trellix FireEye:
+  - "_spf.fireeye.com"
+IBM Cloud:
+  - "_spf.ibmcloud.com"
