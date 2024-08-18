@@ -111,8 +111,8 @@ To build this on your machine, you need to have Golang installed.
 If you do, simply make build.sh executable and run it like so
 
 ```bash
-❯ chmod +x build.sh
-❯ ./build.sh
+chmod +x build.sh
+./build.sh
 ```
 
 ## ⚙️ Installation
