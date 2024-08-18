@@ -17,9 +17,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "dnsservices <domain1> <domain2>...",
-	Short: "dnsservices",
-	Long:  "dnsservices - discover service-related information from DNS records.",
+	Use:   "dnscovery <domain1> <domain2>...",
+	Short: "dnscovery",
+	Long:  "dnscovery - discover service-related information from DNS records.",
 	Args:  cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		input = args

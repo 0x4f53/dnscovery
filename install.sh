@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-bin_name="dnsservices"
+bin_name="dnscovery"
 
 resolvers_file="resolvers.yaml"
 signatures_file="signatures.yaml"

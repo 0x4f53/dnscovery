@@ -1,12 +1,12 @@
 
 [![Golang](https://img.shields.io/badge/Golang-fff.svg?style=flat-square&logo=go)](https://go.dev)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=flat-square&logo=libreoffice)](LICENSE)
-[![Latest Version](https://img.shields.io/github/v/tag/0x4f53/dnsservices?label=Version&style=flat-square&logo=semver)](https://github.com/0x4f53/dnsservices/releases)
+[![Latest Version](https://img.shields.io/github/v/tag/0x4f53/dnscovery?label=Version&style=flat-square&logo=semver)](https://github.com/0x4f53/dnscovery/releases)
 [![Binaries](https://img.shields.io/badge/Binaries-Click%20Here-blue?style=flat-square&logo=dropbox)](.build/binaries/)
 
-# 🌐 DNSservices
+# 🌐 Dnscovery
 
-<img src = preview.gif alt="subs preview" width = "500dp">
+<img src = preview.gif alt="dnscovery preview" width = "500dp">
 
 A lightning-fast Golang tool to discover services embedded into DNS records
 
@@ -23,7 +23,7 @@ _** - depending on factors like internet speed, DNS server availability etc._
 
 ```bash
 Usage:
-  dnsservices <domain1> <domain2>... [flags]
+  dnscovery <domain1> <domain2>... [flags]
 
 Flags:
   -o, --output string   Save output to file (in JSON format)
@@ -32,7 +32,7 @@ Flags:
 ### Examples
 - Trying one domain
 ```bash
-❯ ./dnsservices 0x4f.in
+❯ ./dnscovery 0x4f.in
 
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
@@ -42,7 +42,7 @@ Found services: OpenAI Domain, Ethereum Name Service, Cloudflare Mail, Google Wo
 
 - JSON output
 ```bash
-❯ ./dnsservices 0x4f.in -o=output.json
+❯ ./dnscovery 0x4f.in -o=output.json
 
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
@@ -71,7 +71,7 @@ Output saved to 'output.json'
 
 - Trying multiple domains
 ```bash
-❯ ./dnsservices 0x4f.in blackhat.com
+❯ ./dnscovery 0x4f.in blackhat.com
 Checking if online...   [ ✓ ONLINE ]
 
 Looking up '0x4f.in'... [ 7 resolvers found! ]
@@ -83,7 +83,7 @@ Found services: Google Search Console, Microsoft Office 365, Twilio SendGrid, Go
 
 - Verbose mode
 ```bash
-❯ ./dnsservices 0x4f.in -v
+❯ ./dnscovery 0x4f.in -v
 
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]

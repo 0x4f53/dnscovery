@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the program name and version
-PROGRAM_NAME="dnsservices"
+PROGRAM_NAME="dnscovery"
 VERSION="1.0.0"
 
 # Define the operating systems and architectures you want to build for

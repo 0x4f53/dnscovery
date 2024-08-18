@@ -1,4 +1,4 @@
-module dnsservices
+module dnscovery
 
 go 1.22.3
 
