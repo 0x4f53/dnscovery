@@ -11,6 +11,7 @@
 A lightning-fast Golang tool to discover services embedded into DNS records
 
 ## 🚀 Features
+
 - Takes just 2 seconds to resolve a domain**
 - Queries multiple DNS servers concurrently
 - More than 100 service signatures supported
