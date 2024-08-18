@@ -354,3 +354,15 @@ Barracuda.com:
   - "bvm-site-verification"
 Postman:
   - "postman-domain-verification"
+Botify:
+  - "botify-*.*-verification"
+Detectify:
+  - "detectify-*.*-verification"
+Acumbamail:
+  - "acumbamail-domain-verification"
+Cloubees:
+  - "cloudbees-domain-verification"
+KnowBe4:
+  - "knowbe4-site-verification"
+Feedblitz:
+  - "blitz"
