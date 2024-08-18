@@ -173,6 +173,7 @@ Dynatrace:
 Apple:
   - "apple-domain-verification=.{16}"
   - "_apple-envoy-PublicKey-"
+  - "apple-domain"
 ActiveCampaign:
   - "include:emsd1.com"
 Rackspace:
