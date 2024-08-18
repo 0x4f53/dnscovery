@@ -1,7 +1,9 @@
 Google Cloud Platform:
   - "google-site-verification"
-  - "(?i)gcp|google cloud"
-  - "(?i)ASPMX.L.GOOGLE.COM"
+  - "google cloud"
+  - "google-cloud"
+  - "gcp"
+  - "ASPMX.L.GOOGLE.COM"
 Firebase (Google):
   - "firebase"
 Google Workspace:
@@ -12,10 +14,11 @@ Gandi.net:
   - "_spf.gandi.net"
 Microsoft Office 365:
   - ".*protection.outlook.com"
-  - "(?i)MS=ms(.*){4,16}"
+  - "MS=ms(.*){4,16}"
   - "mscid"
+  - "mtc=ms"
 Microsoft Azure:
-  - "(?i)azure|microsoft"
+  - "azure|microsoft"
 Microsoft Bing Webmaster Tools:
   - "msvalidate.01"
 Microsoft Dynamics 365:
@@ -58,11 +61,11 @@ Cloudflare Mail:
   - ".*@dmarc-reports.cloudflare.net"
 DigiCert:
   - "globalsign-domain-verification"
+  - "digicert"
 Let's Encrypt:
   - "acme-challenge"
 GitHub:
-  - "github-domain-verification"
-  - "github-pages-verification"
+  - "github-*.*-verification"
 GitLab:
   - "gitlab-pages-verification-code"
 Adobe Creative Cloud:
@@ -71,9 +74,12 @@ Salesforce:
   - "include:.*salesforce.*"
 Salesforce Pardot:
   - "pardot_"
+Salesforce Marketing Cloud:
+  - "sfmc-"
 Zendesk:
   - "include:.*mail.zendesk.*"
   - "zendesk-verification"
+  - "zendeskverification"
 Qualtrics:
   - "include:.*.qualtrics.*"
 HubSpot:
@@ -159,7 +165,7 @@ Campaigner:
 Fortinet:
   - "fortinet-fortiphish-site-verification=.{16,24}"
 Dynatrace:
-  - "(d|D)ynatrace-site-verification=*.{48,64}"
+  - "dynatrace-site-verification="
 Apple:
   - "apple-domain-verification=.{16}"
   - "_apple-envoy-PublicKey-"
@@ -167,7 +173,7 @@ ActiveCampaign:
   - "include:emsd1.com"
 Rackspace:
   - "include:emailsrvr.com"
-  - "(?i)rackspace"
+  - "rackspace"
 Ethereum Name Service:
   - "ENS1 dnsname.ens.eth 0x.{40}"
 OpenAI Domain:
@@ -211,11 +217,12 @@ Freshdesk:
 Akamai:
   - "akamai-edge-verification"
 Fastly:
-  - "(?i)fastly-domain-verification"
+  - "fastly-domain-verification"
 CloudFront:
   - "cloudfront-verify"
 Alibaba Cloud:
   - "alibaba-site-verification"
+  - "aliyun-site-verification"
 Infura:
   - "infura-domain-verification-"
 SendinBlue:
@@ -226,7 +233,7 @@ Pendo:
 Amplitude:
   - "amplitude-site-verification-"
 Segment:
-  - "segment-verification"
+  - "segment-*.*-verification"
 Datadog:
   - "datadog-site-verification-"
 PagerDuty:
@@ -251,3 +258,99 @@ Brave:
   - "brave-ledger-verification"
 Loader.io:
   - "loaderio"
+Marigold Emma:
+  - "e2ma-verification"
+OS Trio:
+  - "ostrio-domain"
+Loadmill:
+  - "loadmill-challenge"
+Google Upspin:
+  - "upspin"
+Entrust:
+  - "entrust"
+Ahrefs:
+  - "ahrefs-site-verification"
+StoriesOnBoard:
+  - "storiesonboard-verification"
+Probe.ly:
+  - "probe.ly"
+Fujitsu Nifcloud:
+  - "nifty-dns-verify"
+Nethely.hu:
+  - "nethely-dvc"
+Favro-verification:
+  - "favro-verification"
+Zapier:
+  - "zapier-domain-verification"
+uWSGI:
+  - "uwsgi:"
+uWSGI:
+  - "uwsgi:"
+bhosted.nl:
+  - "bhosted"
+AuthCode:
+  - "Auth-Code"
+Keybase:
+  - "keybase-site-verification"
+Sonatype:
+  - "sonatype"
+  - "OSSRH"
+Rebelmouse:
+  - "rebelmouse"
+Akamai Cloudpiercer:
+  - "cloudpiercer-verification"
+Campus*Suite:
+  - "campussuite-domain-verification"
+Daum:
+  - "daum-verification"
+RedHat Fuse:
+  - "FuseServer"
+  - "FusServer"
+Fortifi:
+  - "fortifi-domain-verification"
+ForwardEmail:
+  - "forward-email"
+ThousandEyes:
+  - "thousandeyes"
+Kingsoft WPS Office:
+  - "wps.cn"
+WebAccel Studio:
+  - "webaccel"
+Perlu:
+  - "perlu-site-verification"
+Numbo:
+  - "inumbo-verification"
+Quovadis Global:
+  - "quovadis"
+ProtonMail:
+  - "protonmail-verification"
+FeedBlitz:
+  - "blitz"
+LogMeIn:
+  - "logmein-verification-code"
+BugCrowd:
+  - "bugcrowd-verification"
+Sage.com:
+  - "intacct-esk"
+Symantec:
+  - "OSIAGENTREGURL"
+TeamViewer:
+  - "teamviewer-sso-verification"
+SpyCloud:
+  - "spycloud-domain-verification"
+Mailigen:
+  - "mailigen-site-verification"
+Sophos:
+  - "sophos-domain-verification"
+Dailymotion:
+  - "dailymotion-domain-verification"
+Anodot:
+  - "anodot-domain-verification"
+cloudControl:
+  - "cloudControl-verification"
+site24x7:
+  - "site24x7-domain-verification="
+Barracuda.com:
+  - "bvm-site-verification"
+Postman:
+  - "postman-domain-verification"
