@@ -33,17 +33,22 @@ Flags:
 - Trying one domain
 ```bash
 ❯ ./dnsservices 0x4f.in
+
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
+
 Found services: OpenAI Domain, Ethereum Name Service, Cloudflare Mail, Google Workspace
 ```
 
 - JSON output
 ```bash
 ❯ ./dnsservices 0x4f.in -o=output.json
+
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
+
 Output saved to 'output.json'
+
 ❯ cat output.json
 {
   "Host": "0x4f.in",
@@ -79,10 +84,11 @@ Found services: Google Search Console, Microsoft Office 365, Twilio SendGrid, Go
 - Verbose mode
 ```bash
 ❯ ./dnsservices 0x4f.in -v
+
 Checking if online...   [ ✓ ONLINE ]
 Looking up '0x4f.in'... [ 7 resolvers found! ]
 
-DNS providers containing with this host:
+DNS providers with this host:
   1. Quad9 (9.9.9.9)
   2. Google (8.8.4.4)
   4. Cloudflare (1.1.1.1)
