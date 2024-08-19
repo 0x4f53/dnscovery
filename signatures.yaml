@@ -158,11 +158,10 @@ Okta:
   - ".*okta.*"
 AWeber:
   - "include:.*.aweber.com"
-Cisco:
-  - "cisco-ci-domain-verification"
 Cisco Webex:
   - "webexdomainverification"
   - "ciscocidomainverification"
+  - "cisco-ci-domain-verification"
 Campaigner:
   - "include:*.*campaigner.com"
 Fortinet:
