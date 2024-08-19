@@ -73,6 +73,7 @@ Output saved to 'output.json'
 - Trying multiple domains
 ```bash
 ❯ ./dnscovery 0x4f.in blackhat.com
+
 Checking if online...   [ ✓ ONLINE ]
 
 Looking up '0x4f.in'... [ 7 resolvers found! ]
@@ -139,6 +140,12 @@ without installation
 ### Windows
 You can find the exe files in [`.build/binaries`](.build/binaries/)
 
+
+## 👍 Credits
+
+- [NetSPI's Powershell scripts](https://github.com/NetSPI/PowerShell/blob/master/Resolve-DnsDomainValidationToken.ps1)
+
+- [Google Dorks](https://www.freecodecamp.org/news/google-dorking-for-pentesters-a-practical-tutorial/) - good life skill to have
 
 ---
 

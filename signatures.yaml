@@ -363,7 +363,7 @@ Detectify:
   - "detectify-*.*-verification"
 Acumbamail:
   - "acumbamail-domain-verification"
-Cloubees:
+Cloudbees:
   - "cloudbees-domain-verification"
 KnowBe4:
   - "knowbe4-site-verification"
