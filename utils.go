@@ -7,8 +7,10 @@ import (
 	"regexp"
 	"strconv"
 	"sync"
+	"time"
 
 	"github.com/miekg/dns"
+	"golang.org/x/exp/rand"
 	"gopkg.in/yaml.v3"
 )
 
@@ -58,6 +60,14 @@ var recordTypes = []uint16{
 	dns.TypeMX,
 	dns.TypeCNAME,
 	dns.TypeSRV,
+}
+
+func shuffleResolvers(resolvers []Resolver) {
+	rand.Seed(uint64(time.Now().UnixNano()))
+	for i := len(resolvers) - 1; i > 0; i-- {
+		j := rand.Intn(i + 1)
+		resolvers[i], resolvers[j] = resolvers[j], resolvers[i]
+	}
 }
 
 func queryDNS(domain string, recordType uint16, resolver Resolver) ([]Record, error) {

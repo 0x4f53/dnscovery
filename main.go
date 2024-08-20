@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"sync"
 
 	"github.com/spf13/cobra"
 )
@@ -31,11 +32,7 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-func printServices(output Output) {
-
-	if verbose {
-		printProviders(output)
-	}
+func printBasic(output Output) {
 
 	var services []string
 	for _, item := range output.Answers {
@@ -50,19 +47,9 @@ func printServices(output Output) {
 	}
 	services = RemoveDuplicatesAndEmptyStrings(services)
 
-	if verbose {
-		fmt.Println()
-	}
-	fmt.Printf("Found services: ")
-	if verbose {
-		fmt.Println()
-	}
+	fmt.Printf(output.Host + ": ")
 
 	for index, record := range services {
-		if verbose {
-			fmt.Printf("  %s. %s\n", strconv.Itoa(index+1), record)
-			continue
-		}
 
 		fmt.Printf("%s", record)
 
@@ -76,7 +63,33 @@ func printServices(output Output) {
 
 }
 
-func saveAsJson(output Output) {
+func printVerbose(outputList []Output) {
+	for _, output := range outputList {
+		fmt.Println(output.Host)
+		fmt.Print("  Resolved by:")
+		for _, answer := range output.Answers {
+			fmt.Print(" " + answer.Resolver.Name + " (" + answer.Resolver.IP + ")")
+		}
+		var services []string
+		fmt.Print("\n  Services:\n")
+		for _, answer := range output.Answers {
+			for _, record := range answer.Records {
+				for _, service := range record.Services {
+					serviceString := "    " + service + "\n      " + record.Value
+					services = append(services, serviceString)
+				}
+			}
+		}
+		services = RemoveDuplicatesAndEmptyStrings(services)
+		for _, service := range services {
+			fmt.Println(service)
+		}
+		fmt.Println()
+	}
+
+}
+
+func saveAsJson(output []Output) {
 	outputBytes, err := json.MarshalIndent(output, "", "  ")
 
 	if err != nil {
@@ -126,7 +139,10 @@ func main() {
 		ErrorLog.Println(err)
 		os.Exit(-1)
 	}
+
 	Resolvers = resolvers
+
+	fmt.Print("\nReading resolvers...\t[ " + strconv.Itoa(len(resolvers)) + " found! ]")
 
 	fmt.Print("\nChecking if online...")
 
@@ -136,34 +152,52 @@ func main() {
 		os.Exit(-2)
 	}
 
-	fmt.Print("\t[ ✓ ONLINE ]\n")
+	fmt.Print("\t[ ✓ ONLINE ]\n\n")
 
 	signatures, err := GetSignatures()
 	if err != nil {
 		ErrorLog.Println(err)
 		os.Exit(-1)
 	}
+
 	Signatures = signatures
 
+	var finalOutput []Output
+
+	var wg sync.WaitGroup
+
 	for _, domain := range input {
+		shuffleResolvers(resolvers)
+		Resolvers = resolvers
 
-		fmt.Println("Looking up '" + domain + "'...\t[ " + strconv.Itoa(len(resolvers)) + " resolvers found! ]")
+		wg.Add(1)
+		go func(domain string) {
+			defer wg.Done()
 
-		output, err := Dig(domain)
+			output, err := Dig(domain)
+			if err != nil {
+				ErrorLog.Println(err)
+				return
+			}
 
-		if err != nil {
-			ErrorLog.Println(err)
-			os.Exit(-1)
-		}
+			finalOutput = append(finalOutput, output)
 
-		if outputFlagSet {
-			fmt.Println("Output saved to '" + outputFile + "'")
-			saveAsJson(output)
-			return
-		}
+			if !verbose {
+				printBasic(output)
+			}
 
-		printServices(output)
+		}(domain)
+	}
 
+	wg.Wait()
+
+	if verbose {
+		printVerbose(finalOutput)
+	}
+
+	if outputFlagSet {
+		fmt.Println("Output saved to '" + outputFile + "'")
+		saveAsJson(finalOutput)
 	}
 
 }
