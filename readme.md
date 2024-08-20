@@ -10,15 +10,17 @@
 
 A lightning-fast Golang tool to discover services embedded into DNS records
 
+
 ## 🚀 Features
 
-- Takes just 2 seconds to resolve a domain**
+- Takes just 1 second to resolve multiple domains**
 - Queries multiple DNS servers concurrently
 - More than 100 service signatures supported
 - Easy to customize regexes and resolvers lists in YAML format
 - Verbose JSON output for in-depth debugging
 
 _** - depending on factors like internet speed, DNS server availability etc._
+
 
 ## 🖊️ Usage
 
@@ -35,10 +37,10 @@ Flags:
 ```bash
 ❯ ./dnscovery 0x4f.in
 
+Reading resolvers...    [ 7 found! ]
 Checking if online...   [ ✓ ONLINE ]
-Looking up '0x4f.in'... [ 7 resolvers found! ]
 
-Found services: OpenAI Domain, Ethereum Name Service, Cloudflare Mail, Google Workspace
+0x4f.in: OpenAI Domain, Cloudflare Mail, Google Workspace, Ethereum Name Service
 ```
 
 - JSON output
@@ -72,38 +74,42 @@ Output saved to 'output.json'
 
 - Trying multiple domains
 ```bash
-❯ ./dnscovery 0x4f.in blackhat.com
+❯ dnscovery nintendo.co.jp phase.dev huffpost.com redgear.com 0x4f.in lenovo.com apple.com microsoft.com netflix.com hackertyper.com tcl.com
 
+Reading resolvers...    [ 7 found! ]
 Checking if online...   [ ✓ ONLINE ]
 
-Looking up '0x4f.in'... [ 7 resolvers found! ]
-Found services: Ethereum Name Service, Cloudflare Mail, Google Workspace, OpenAI Domain
-
-Looking up 'blackhat.com'...    [ 7 resolvers found! ]
-Found services: Google Search Console, Microsoft Office 365, Twilio SendGrid, Google Workspace
+apple.com: Apple, Facebook, Google Cloud Platform, Atlassian
+0x4f.in: Ethereum Name Service, Google Workspace, Cloudflare Mail, OpenAI Domain
+tcl.com: Google Cloud Platform
+lenovo.com: Microsoft Office 365
+microsoft.com: Microsoft Office 365, Microsoft Dynamics 365, Docusign
+netflix.com: Dropbox, Apple, Docusign
+nintendo.co.jp: Microsoft Office 365, Docusign, Adobe Creative Cloud, Google Cloud Platform, Apple
+huffpost.com: Microsoft Office 365, Dropbox, Docusign, KnowBe4, Facebook, Google Cloud Platform
+phase.dev: Google Cloud Platform, Gandi.net, Google Workspace
+redgear.com: Google Workspace, Microsoft Office 365, Barracuda.com, Google Cloud Platform, Dropbox
+hackertyper.com: Google Cloud Platform, Google Workspace
 ```
 
 - Verbose mode
 ```bash
 ❯ ./dnscovery 0x4f.in -v
 
+Reading resolvers...    [ 7 found! ]
 Checking if online...   [ ✓ ONLINE ]
-Looking up '0x4f.in'... [ 7 resolvers found! ]
 
-DNS providers with this host:
-  1. Quad9 (9.9.9.9)
-  2. Google (8.8.4.4)
-  4. Cloudflare (1.1.1.1)
-
-Found services: 
-  1. Ethereum Name Service (in TXT record):
-        ENS1 dnsname.ens.eth 0x6189345d91a667c4822A0afD7587a4994965a57C
-  2. OpenAI Domain (in TXT record):
-        openai-domain-verification=dv-ThXpvQCK0VDGRfFHh6hCP7cy
-  3. Cloudflare Mail (in TXT record):
-        v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
-  4. Google Workspace (in TXT record):
-        v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
+0x4f.in
+  Resolved by: Control D (76.76.2.0) Cloudflare (1.1.1.1) Quad9 (9.9.9.9) OpenDNS (208.67.222.222) Google (8.8.4.4) Verisign (64.6.64.6)
+  Services:
+    OpenAI Domain
+      openai-domain-verification=dv-ThXpvQCK0VDGRfFHh6hCP7cy
+    Google Workspace
+      v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
+    Cloudflare Mail
+      v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
+    Ethereum Name Service
+      ENS1 dnsname.ens.eth 0x6189345d91a667c4822A0afD7587a4994965a57C
 ```
 
 ## ⚙️ Building
@@ -139,6 +145,13 @@ without installation
 
 ### Windows
 You can find the exe files in [`.build/binaries`](.build/binaries/)
+
+
+## ❓ Why I made this
+
+I made this tool to check common services that multiple hosts use, by running it on a list of top 10,000 sites, 
+for statistical purposes. This tool can also speed up a blue-teamer's inspection tasks or 
+provide instant attack vectors for red-teamers to experiment with.
 
 
 ## 👍 Credits
