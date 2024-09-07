@@ -137,6 +137,9 @@ SmarterMail:
   - "include:.*m3c.in"
 Campaign Monitor:
   - "include:.*createsend.*"
+  - "cmail1.com"
+  - "cmail20.com"
+  - "createsend7.com"
 Square:
   - "square-site-verification"
 Docker:
