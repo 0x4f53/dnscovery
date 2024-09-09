@@ -4,7 +4,7 @@ Google Cloud Platform:
   - "google-cloud"
   - "gcp"
   - "ASPMX.L.GOOGLE.COM"
-Firebase (Google):
+Google Firebase:
   - "firebase"
 Google Workspace:
   - "_spf.google.com"
@@ -69,6 +69,7 @@ Let's Encrypt:
   - "acme-challenge"
 GitHub:
   - "github-*.*-verification"
+  - "github-challenge-"
 GitLab:
   - "gitlab-pages-verification-code"
 Adobe Creative Cloud:
@@ -142,6 +143,10 @@ Campaign Monitor:
   - "createsend7.com"
 Square:
   - "square-site-verification"
+Klaviyo:
+  - "klaviyo-site-verification"
+HackerOne:
+  - "h1-domain-verification"
 Docker:
   - "docker-domain-verification"
 LinkedIn:
@@ -189,6 +194,10 @@ OpenAI Domain:
   - "openai-domain-verification=.*"
 Dropbox Paper:
   - "dropbox-paper-domain-verification"
+Wrike:
+  - "wrike-verification"
+Mixpanel:
+  - "mixpanel-domain-verify"
 Twilio:
   - "twilio-domain-verification"
   - "include:spf.twilio.com"
@@ -330,7 +339,7 @@ ProtonMail:
   - "protonmail-verification"
 FeedBlitz:
   - "blitz"
-LogMeIn:
+GoTo LogMeIn:
   - "logmein-verification-code"
 BugCrowd:
   - "bugcrowd-verification"
@@ -371,6 +380,10 @@ KnowBe4:
   - "knowbe4-site-verification"
 Feedblitz:
   - "blitz"
+OneTrust:
+  - "onetrust-domain-verification"
+Drift:
+  - "drift-domain-verification"
 Palo Alto Networks:
   - "_spf.paloaltonetworks.com"
 McAfee:
